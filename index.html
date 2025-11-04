@@ -111,6 +111,44 @@
             font-size: 0.9em;
         }
 
+        .other-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .other-link-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60px;
+        }
+
+        .other-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .other-link-card h3 {
+            color: #667eea;
+            margin: 0;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .other-link-card:hover h3 {
+            color: white;
+        }
+
         @media (max-width: 600px) {
             .hero h1 {
                 font-size: 2em;
@@ -118,6 +156,10 @@
             
             .hero p {
                 font-size: 1em;
+            }
+
+            .other-links-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -162,10 +204,11 @@
         <div class="links-section">
             <h2>Other Links</h2>
             
-            <a href="https://forms.gle/1UtfXYGVfLr1q2rR6" class="link-card" target="_blank">
-                <h3>Request Reimbursement</h3>
-                <p>Record an expense for the PSG that can be reimbursed</p>
-            </a>
+            <div class="other-links-grid">
+                <a href="https://forms.gle/1UtfXYGVfLr1q2rR6" class="other-link-card" target="_blank">
+                    <h3>Request Reimbursement</h3>
+                </a>
+            </div>
         </div>
 
         <div class="links-section">
