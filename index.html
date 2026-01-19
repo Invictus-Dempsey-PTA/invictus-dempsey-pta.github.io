@@ -1,221 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invictus Dempsey-PSG</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-pink': '#ff69b4',
+                        'brand-orange': '#ff8c00',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        .hero {
+        .gradient-brand {
             background: linear-gradient(135deg, #ff69b4 0%, #ff8c00 100%);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .hero-image {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        .links-section {
-            padding: 40px 20px;
-        }
-
-        .links-section h2 {
-            text-align: center;
-            color: #000000;
-            margin-bottom: 30px;
-            font-size: 1.8em;
-        }
-
-        .link-card {
-            background: white;
-            border: 2px solid #000000;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            color: inherit;
-        }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, #ff69b4 0%, #ff8c00 100%);
-            color: white;
-        }
-
-        .link-card h3 {
-            color: #000000;
-            margin-bottom: 8px;
-            font-size: 1.4em;
-            transition: color 0.3s ease;
-        }
-
-        .link-card:hover h3 {
-            color: white;
-        }
-
-        .link-card p {
-            font-size: 1em;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            font-size: 0.9em;
-        }
-
-        .other-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .other-link-card {
-            background: white;
-            border: 2px solid #000000;
-            border-radius: 10px;
-            padding: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 60px;
-        }
-
-        .other-link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, #ff69b4 0%, #ff8c00 100%);
-        }
-
-        .other-link-card h3 {
-            color: #000000;
-            margin: 0;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-
-        .other-link-card:hover h3 {
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            
-            .hero p {
-                font-size: 1em;
-            }
-
-            .other-links-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="hero">
-            <div class="hero-image">
-                🎓
+<body class="bg-gray-50">
+    <!-- Navigation Menu -->
+    <div class="navbar bg-white shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-100 rounded-box w-52">
+                    <li><a href="#links" class="text-base">Quick Links</a></li>
+                    <li><a href="#contact" class="text-base">Contact</a></li>
+                    <li><a href="#other" class="text-base">Other Links</a></li>
+                    <li><a href="#calendar" class="text-base">Calendar</a></li>
+                </ul>
             </div>
-            <h1>Invictus Dempsey-PSG</h1>
-            <p>Parent Support Group</p>
+            <a href="/" class="btn btn-ghost text-xl font-bold">Invictus Dempsey-PSG</a>
         </div>
-
-        <div class="links-section">
-            <h2>Quick Links</h2>
-            
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSefhYrq_KmGIysXJoDbildS5ecVsgT4xcluAHG-DNyBj0hD5Q/viewform?usp=dialog" class="link-card" target="_blank">
-                <h3>🎄 Christmas Fair Feedback</h3>
-                <p>Give feedback to the PSG for next year</p>
-            </a>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-base">
+                <li><a href="#links">Quick Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#other">Other Links</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+            </ul>
         </div>
-
-        <div class="links-section">
-            <h2>Contact</h2>
-            
-            <div class="link-card">
-                <p>Got questions?. Contact the PSG team, email us: <a href="mailto:ptainvictussg@gmail.com" style="color: inherit; text-decoration: underline;">ptainvictussg@gmail.com</a></p>
-            </div>
-        </div>
-
-        <div class="links-section">
-            <h2>Other Links</h2>
-            
-            <div class="other-links-grid">
-                <a href="https://forms.gle/1UtfXYGVfLr1q2rR6" class="other-link-card" target="_blank">
-                    <h3>Request Reimbursement</h3>
-                </a>
-                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTi5zSi4VOM404imm5_v8zyayummSmAOjNmZJQdf_9k9wyIYGL8dorX9P_2sFFZs-LqdDVWhikKMMAr/pubhtml?gid=1977855793&single=true" class="other-link-card" target="_blank">
-                    <h3>Volunteer Allocations</h3>
-                </a>
-            </div>
-        </div>
-
-        <div class="links-section">
-            <h2>Calendar</h2>
-            
-            <div style="text-align: center;">
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FSingapore&showPrint=0&showTabs=0&mode=AGENDA&showCalendars=0&showNav=0&showTitle=0&showTz=0&src=MmFhMzNkOTdlNTk0ZDNlMDkzM2ZhOWVlZGRlNDgyOWRlYWE1OWM1NjRjYzg4NWYyODIxNzY5Y2IzYWNhNTI4NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239e69af" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 Invictus Dempsey-PSG. Made with a lot of ❤️ by the many parents of Invictus Dempsey</p>
-        </footer>
     </div>
+
+    <!-- Hero Section -->
+    <div class="hero gradient-brand text-white py-16">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center text-5xl mx-auto mb-6 shadow-xl">
+                    🎓
+                </div>
+                <h1 class="text-5xl font-bold mb-4">Invictus Dempsey-PSG</h1>
+                <p class="text-xl opacity-90">Parent Support Group</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Quick Links Section -->
+        <section id="links" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Quick Links</h2>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSefhYrq_KmGIysXJoDbildS5ecVsgT4xcluAHG-DNyBj0hD5Q/viewform?usp=dialog" 
+               class="card bg-white border-2 border-black hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-brand-pink hover:to-brand-orange hover:text-white group mb-6" 
+               target="_blank">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl group-hover:text-white">🎄 Christmas Fair Feedback</h3>
+                    <p class="text-base">Give feedback to the PSG for next year</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact</h2>
+            
+            <div class="card bg-white border-2 border-black shadow-lg">
+                <div class="card-body">
+                    <p class="text-base">Got questions? Contact the PSG team, email us: <a href="mailto:ptainvictussg@gmail.com" class="link link-hover font-semibold">ptainvictussg@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Links Section -->
+        <section id="other" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Other Links</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://forms.gle/1UtfXYGVfLr1q2rR6" 
+                   class="card bg-white border-2 border-black hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-brand-pink hover:to-brand-orange hover:text-white group" 
+                   target="_blank">
+                    <div class="card-body items-center text-center">
+                        <h3 class="card-title text-xl group-hover:text-white">Request Reimbursement</h3>
+                    </div>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTi5zSi4VOM404imm5_v8zyayummSmAOjNmZJQdf_9k9wyIYGL8dorX9P_2sFFZs-LqdDVWhikKMMAr/pubhtml?gid=1977855793&single=true" 
+                   class="card bg-white border-2 border-black hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-brand-pink hover:to-brand-orange hover:text-white group" 
+                   target="_blank">
+                    <div class="card-body items-center text-center">
+                        <h3 class="card-title text-xl group-hover:text-white">Volunteer Allocations</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Calendar</h2>
+            
+            <div class="card bg-white shadow-xl">
+                <div class="card-body p-0">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FSingapore&showPrint=0&showTabs=0&mode=AGENDA&showCalendars=0&showNav=0&showTitle=0&showTz=0&src=MmFhMzNkOTdlNTk0ZDNlMDkzM2ZhOWVlZGRlNDgyOWRlYWE1OWM1NjRjYzg4NWYyODIxNzY5Y2IzYWNhNTI4NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239e69af" 
+                            class="w-full rounded-box" 
+                            height="600" 
+                            frameborder="0" 
+                            scrolling="no"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-neutral text-neutral-content">
+        <aside>
+            <p class="text-base">&copy; 2025 Invictus Dempsey-PSG. Made with a lot of ❤️ by the many parents of Invictus Dempsey</p>
+        </aside>
+    </footer>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "84c2f08e9a1d441e965c164835035609"}'></script><!-- End Cloudflare Web Analytics -->
     <!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
